@@ -9,7 +9,7 @@ RUN echo "deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti" > /etc
     ln -s /var/lib/unifi /usr/lib/unifi/data
 
 EXPOSE 8080/tcp 8081/tcp 8443/tcp 8843/tcp 8880/tcp 3478/udp
-WORKDIR ["/var/lib/unifi"]
 VOLUME ["/var/lib/unifi"]
+WORKDIR /var/lib/unifi
 
 CMD ["java", "-Xmx256M", "-jar", "/usr/lib/unifi/lib/ace.jar", "start"]
