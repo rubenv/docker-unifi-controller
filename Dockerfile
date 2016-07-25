@@ -1,6 +1,6 @@
 FROM debian
 
-RUN echo "deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti" > "/etc/apt/sources.list.d/100-ubnt.list" && \
+RUN echo "deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti" > /etc/apt/sources.list.d/100-ubnt.list && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50 && \
     apt-get update && \
     apt-get install --no-install-recommends -qy unifi && \
