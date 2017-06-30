@@ -1,9 +1,9 @@
 FROM debian
 
-RUN echo "deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti" > /etc/apt/sources.list.d/100-ubnt.list && \
-    apt-get update && \
+RUN apt-get update && \
     apt-get install --no-install-recommends -qy gnupg2 dirmngr && \
     apt-key adv --keyserver keyserver.ubuntu.com --recv C0A52C50 && \
+    echo "deb http://www.ubnt.com/downloads/unifi/debian stable ubiquiti" > /etc/apt/sources.list.d/100-ubnt.list && \
     apt-get update && \
     apt-get install --no-install-recommends -qy unifi && \
     apt-get -q clean && rm -rf /var/lib/apt/lists/* && \
